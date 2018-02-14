@@ -1,0 +1,721 @@
+{
+ "Cocktail": [
+  {
+   "name": "Elixir Bloody Mary",
+   "ingredients": [
+    {
+     "name": "Old Bay Seasoning"
+    },
+    {
+     "name": "Square One Organic vodka",
+     "units": "2 oz"
+    },
+    {
+     "name": "Dried dill",
+     "units": "1 tsp"
+    },
+    {
+     "name": "Ground white pepper",
+     "units": "1 tsp"
+    },
+    {
+     "name": "Celery salt",
+     "units": "1 tsp"
+    },
+    {
+     "name": "Worcestershire sauce",
+     "units": "2 dashes"
+    },
+    {
+     "name": "Tabasco Sauce",
+     "units": "2 dashes"
+    },
+    {
+     "name": "Elixir Juice (a mixture of olive brine, dill pickle brine and various other pickle brines)",
+     "units": "1⁄2 oz"
+    },
+    {
+     "name": "Lemon wedge's juice",
+     "units": "1"
+    },
+    {
+     "name": "Prepared horseradish",
+     "units": "1 tsp"
+    },
+    {
+     "name": "Tomato juice",
+     "units": "4 oz"
+    }
+   ],
+   "garnish": [
+    {
+     "name": "Kosher dill pickle"
+    },
+    {
+     "name": "Cooked thick-cut bacon slice"
+    }
+   ],
+   "howto": [
+    {
+     "text": "Coat the rim of a pint glass with Old Bay Seasoning."
+    },
+    {
+     "text": "Add the remaining ingredients to a shaker and fill with ice."
+    },
+    {
+     "text": "Shake lightly�-you want to mix the ingredients without melting too much of the ice�-and pour (unstrained) into the prepared glass."
+    },
+    {
+     "text": "Garnish with a kosher dill pickle spear and a cooked slice of thick-cut bacon."
+    },
+    {
+     "text": "Don't use a straw; drink from the rim in order to get a little of the Old Bay with each sip."
+    }
+   ],
+   "base": [
+    {
+     "name": "Vodka"
+    }
+   ],
+   "type": "Classics",
+   "type_url": "https://www.liquor.com/recipe-type/classics/?post_type=recipe",
+   "difficulty": "Complicated",
+   "difficulty_url": "https://www.liquor.com/complexity/complicated/?post_type=recipe",
+   "strength": "Medium",
+   "strength_url": "https://www.liquor.com/strength/medium/?post_type=recipe"
+  },
+  {
+   "name": "Gypsy Queen",
+   "ingredients": [
+    {
+     "name": "Russian Standard Vodka",
+     "units": "2 oz"
+    },
+    {
+     "name": "Bénédictine",
+     "units": "1 oz"
+    },
+    {
+     "name": "Angostura bitters",
+     "units": "2 dashes"
+    }
+   ],
+   "garnish": [
+    {
+     "name": "1 Thin-cut lemon peel"
+    }
+   ],
+   "howto": [
+    {
+     "text": "Add all the ingredients to a mixing glass and fill with cracked ice."
+    },
+    {
+     "text": "Stir, and strain into a chilled cocktail glass."
+    },
+    {
+     "text": "Twist a swatch of thin-cut lemon peel over the top and discard."
+    }
+   ],
+   "base": [
+    {
+     "name": "Vodka"
+    }
+   ],
+   "type": "Modern Classics",
+   "type_url": "https://www.liquor.com/recipe-type/modern-classics/?post_type=recipe",
+   "difficulty": "Medium",
+   "difficulty_url": "https://www.liquor.com/complexity/medium/?post_type=recipe",
+   "strength": "Medium",
+   "strength_url": "https://www.liquor.com/strength/medium/?post_type=recipe"
+  },
+  {
+   "name": "Organic Moscow Mule",
+   "ingredients": [
+    {
+     "name": "Square One Organic vodka",
+     "units": "2 oz"
+    },
+    {
+     "name": "Ginger beer",
+     "units": "3 oz"
+    },
+    {
+     "name": "Juice of half a lime"
+    }
+   ],
+   "garnish": [
+    {
+     "name": "Lime wheel"
+    }
+   ],
+   "howto": [
+    {
+     "text": "Add all of the ingredients to a Moscow Mule mug (or highball glass) filled with ice, and garnish with a lime wheel."
+    }
+   ],
+   "base": [
+    {
+     "name": "Vodka"
+    }
+   ],
+   "type": "Classics",
+   "type_url": "https://www.liquor.com/recipe-type/classics/?post_type=recipe",
+   "difficulty": "Simple",
+   "difficulty_url": "https://www.liquor.com/complexity/simple-2/?post_type=recipe",
+   "strength": "Medium",
+   "strength_url": "https://www.liquor.com/strength/medium/?post_type=recipe"
+  },
+  {
+   "name": "Vesper",
+   "ingredients": [
+    {
+     "name": "Plymouth gin",
+     "units": "3 oz"
+    },
+    {
+     "name": "Absolut vodka",
+     "units": "1 oz"
+    },
+    {
+     "name": "Lillet blanc aperitif",
+     "units": "1⁄2 oz"
+    }
+   ],
+   "garnish": [
+    {
+     "name": "1 Lemon peel"
+    }
+   ],
+   "howto": [
+    {
+     "text": "Add all the ingredients to a mixing glass and fill with ice."
+    },
+    {
+     "text": "Stir, and strain into a chilled cocktail glass."
+    },
+    {
+     "text": "Twist a slice of lemon peel over the drink, rub along the rim of the glass and drop it in."
+    }
+   ],
+   "base": [
+    {
+     "name": "Gin"
+    },
+    {
+     "name": "Vodka"
+    }
+   ],
+   "type": "Classics",
+   "type_url": "https://www.liquor.com/recipe-type/classics/?post_type=recipe",
+   "difficulty": "Medium",
+   "difficulty_url": "https://www.liquor.com/complexity/medium/?post_type=recipe",
+   "strength": "Strong",
+   "strength_url": "https://www.liquor.com/strength/strong/?post_type=recipe"
+  },
+  {
+   "name": "Cucumber, Basil & Lime Gimlet",
+   "ingredients": [
+    {
+     "name": "Moon Mountain Vodka",
+     "units": "1 1⁄2 oz"
+    },
+    {
+     "name": "Cucumber (.25 inches)",
+     "units": "2 slices"
+    },
+    {
+     "name": "Fresh basil leaves",
+     "units": "1 1⁄2"
+    },
+    {
+     "name": "Lemonade",
+     "units": "1 oz"
+    },
+    {
+     "name": "Lime juice",
+     "units": "1⁄4 oz"
+    }
+   ],
+   "garnish": [
+    {
+     "name": "1 Lime wedge or cucumber wheel"
+    }
+   ],
+   "howto": [
+    {
+     "text": "In a shaker, muddle the basil and cucumber."
+    },
+    {
+     "text": "Add the remaining ingredients and fill with ice."
+    },
+    {
+     "text": "Shake well and strain into a rocks glass filled with fresh ice."
+    },
+    {
+     "text": "Garnish with a lime wedge or cucumber wheel."
+    }
+   ],
+   "base": [
+    {
+     "name": "Vodka"
+    }
+   ],
+   "type": "Modern Classics",
+   "type_url": "https://www.liquor.com/recipe-type/modern-classics/?post_type=recipe",
+   "difficulty": "Complicated",
+   "difficulty_url": "https://www.liquor.com/complexity/complicated/?post_type=recipe",
+   "strength": "Medium",
+   "strength_url": "https://www.liquor.com/strength/medium/?post_type=recipe"
+  },
+  {
+   "name": "Ketel One Vodka Martini",
+   "ingredients": [
+    {
+     "name": "Ketel One Vodka",
+     "units": "1 1⁄2 oz"
+    },
+    {
+     "name": "Dry vermouth",
+     "units": "1⁄2 oz"
+    }
+   ],
+   "garnish": [
+    {
+     "name": "1 Lemon twist or olives"
+    }
+   ],
+   "howto": [
+    {
+     "text": "Add both ingredients to a Martini glass."
+    },
+    {
+     "text": "Garnish with a lemon twist or olives."
+    }
+   ],
+   "base": [
+    {
+     "name": "Vermouth / Aperitif Wine"
+    },
+    {
+     "name": "Vodka"
+    }
+   ],
+   "type": "Martinis",
+   "type_url": "https://www.liquor.com/recipe-type/martinis/?post_type=recipe",
+   "difficulty": "Simple",
+   "difficulty_url": "https://www.liquor.com/complexity/simple-2/?post_type=recipe",
+   "strength": "Medium",
+   "strength_url": "https://www.liquor.com/strength/medium/?post_type=recipe"
+  },
+  {
+   "name": "Harvey Wallbanger",
+   "ingredients": [
+    {
+     "name": "Vodka",
+     "units": "1 1⁄4 oz"
+    },
+    {
+     "name": "Orange juice",
+     "units": "3 oz"
+    },
+    {
+     "name": "Galliano L'Autentico",
+     "units": "1⁄2 oz"
+    }
+   ],
+   "garnish": [
+    {
+     "name": "1 Orange slice"
+    }
+   ],
+   "howto": [
+    {
+     "text": "Add the vodka and the orange juice to a tall glass filled with ice."
+    },
+    {
+     "text": "Stir, and float the Galliano on top."
+    },
+    {
+     "text": "Garnish with an orange slice."
+    },
+    {
+     "text": "281\nSave"
+    }
+   ],
+   "base": [
+    {
+     "name": "Vodka"
+    }
+   ],
+   "type": "Classics",
+   "type_url": "https://www.liquor.com/recipe-type/classics/?post_type=recipe",
+   "difficulty": "Simple",
+   "difficulty_url": "https://www.liquor.com/complexity/simple-2/?post_type=recipe",
+   "strength": "Medium",
+   "strength_url": "https://www.liquor.com/strength/medium/?post_type=recipe"
+  },
+  {
+   "name": "Cape Codder",
+   "ingredients": [
+    {
+     "name": "Vodka",
+     "units": "1 1⁄2 oz"
+    },
+    {
+     "name": "Cranberry juice"
+    },
+    {
+     "name": "Lime wedge"
+    }
+   ],
+   "howto": [
+    {
+     "text": "Add the vodka to a highball glass filled with ice."
+    },
+    {
+     "text": "Top with cranberry juice and stir until chilled."
+    },
+    {
+     "text": "Squeeze the lime wedge over the glass and drop it into the drink."
+    }
+   ],
+   "base": [
+    {
+     "name": "Vodka"
+    }
+   ],
+   "type": "Classics",
+   "type_url": "https://www.liquor.com/recipe-type/classics/?post_type=recipe",
+   "difficulty": "Simple",
+   "difficulty_url": "https://www.liquor.com/complexity/simple-2/?post_type=recipe",
+   "strength": "Medium",
+   "strength_url": "https://www.liquor.com/strength/medium/?post_type=recipe"
+  },
+  {
+   "name": "Screwdriver",
+   "ingredients": [
+    {
+     "name": "Vodka",
+     "units": "1 1⁄2 oz"
+    },
+    {
+     "name": "Orange juice"
+    }
+   ],
+   "howto": [
+    {
+     "text": "Add the vodka to a highball glass filled with ice."
+    },
+    {
+     "text": "Top with orange juice."
+    }
+   ],
+   "base": [
+    {
+     "name": "Vodka"
+    }
+   ],
+   "type": "Classics",
+   "type_url": "https://www.liquor.com/recipe-type/classics/?post_type=recipe",
+   "difficulty": "Simple",
+   "difficulty_url": "https://www.liquor.com/complexity/simple-2/?post_type=recipe",
+   "strength": "Medium",
+   "strength_url": "https://www.liquor.com/strength/medium/?post_type=recipe"
+  },
+  {
+   "name": "Sex on the Beach",
+   "ingredients": [
+    {
+     "name": "Vodka",
+     "units": "1 1⁄2 oz"
+    },
+    {
+     "name": "Peach schnapps",
+     "units": "1⁄2 oz"
+    },
+    {
+     "name": "Orange or pineapple juice",
+     "units": "1 1⁄2 oz"
+    },
+    {
+     "name": "Cranberry juice",
+     "units": "1 1⁄2 oz"
+    },
+    {
+     "name": "Chambord or crème de cassis (optional)",
+     "units": "1⁄2 oz"
+    }
+   ],
+   "garnish": [
+    {
+     "name": "1 Orange wheel"
+    }
+   ],
+   "howto": [
+    {
+     "text": "Add all the ingredients to a shaker and fill with ice."
+    },
+    {
+     "text": "Shake, and strain into a highball glass filled with fresh ice."
+    },
+    {
+     "text": "Garnish with an orange wheel."
+    }
+   ],
+   "base": [
+    {
+     "name": "Vodka"
+    }
+   ],
+   "type": "Tiki / Tropical",
+   "type_url": "https://www.liquor.com/recipe-type/tiki-tropical/?post_type=recipe",
+   "difficulty": "Medium",
+   "difficulty_url": "https://www.liquor.com/complexity/medium/?post_type=recipe",
+   "strength": "Medium",
+   "strength_url": "https://www.liquor.com/strength/medium/?post_type=recipe"
+  },
+  {
+   "name": "Dirty Martini",
+   "ingredients": [
+    {
+     "name": "Gin or vodka",
+     "units": "2 1⁄2 oz"
+    },
+    {
+     "name": "Dry vermouth",
+     "units": "1⁄2 oz"
+    },
+    {
+     "name": "Olive brine",
+     "units": "1⁄2 oz"
+    }
+   ],
+   "garnish": [
+    {
+     "name": "1 Olives"
+    }
+   ],
+   "howto": [
+    {
+     "text": "Add all the ingredients to a mixing glass filled with ice."
+    },
+    {
+     "text": "Stir, and strain into a chilled cocktail glass."
+    },
+    {
+     "text": "Garnish with 2 olives."
+    }
+   ],
+   "base": [
+    {
+     "name": "Gin"
+    },
+    {
+     "name": "Vodka"
+    }
+   ],
+   "type": "Martinis",
+   "type_url": "https://www.liquor.com/recipe-type/martinis/?post_type=recipe",
+   "difficulty": "Medium",
+   "difficulty_url": "https://www.liquor.com/complexity/medium/?post_type=recipe",
+   "strength": "Strong",
+   "strength_url": "https://www.liquor.com/strength/strong/?post_type=recipe"
+  },
+  {
+   "name": "Greyhound",
+   "ingredients": [
+    {
+     "name": "Vodka",
+     "units": "1 1⁄2 oz"
+    },
+    {
+     "name": "Grapefruit juice"
+    }
+   ],
+   "garnish": [
+    {
+     "name": "1 Lemon or lime wedge"
+    }
+   ],
+   "howto": [
+    {
+     "text": "Add the vodka to a Collins glass filled with ice."
+    },
+    {
+     "text": "Top with grapefruit juice and stir."
+    },
+    {
+     "text": "Garnish with a lemon or lime wedge."
+    },
+    {
+     "text": "(To make a Salty Dog, coat the rim of the glass with salt and leave out the garnish.)."
+    }
+   ],
+   "base": [
+    {
+     "name": "Vodka"
+    }
+   ],
+   "type": "Classics",
+   "type_url": "https://www.liquor.com/recipe-type/classics/?post_type=recipe",
+   "difficulty": "Simple",
+   "difficulty_url": "https://www.liquor.com/complexity/simple-2/?post_type=recipe",
+   "strength": "Medium",
+   "strength_url": "https://www.liquor.com/strength/medium/?post_type=recipe"
+  },
+  {
+   "name": "Cucumber Fizz",
+   "ingredients": [
+    {
+     "name": "Cucumber, peeled and roughly chopped",
+     "units": "2 oz"
+    },
+    {
+     "name": "Grey Goose La Poire flavored vodka",
+     "units": "1 1⁄2 oz"
+    },
+    {
+     "name": "St-Germain elderflower liqueur",
+     "units": "1⁄2 oz"
+    },
+    {
+     "name": "Lemon juice",
+     "units": "1⁄2 oz"
+    },
+    {
+     "name": "Simple syrup",
+     "units": "1⁄2 oz"
+    },
+    {
+     "name": "Lemonade or club soda"
+    }
+   ],
+   "garnish": [
+    {
+     "name": "1 Mint, cucumber slices and lemon zest"
+    }
+   ],
+   "howto": [
+    {
+     "text": "In a shaker, muddle the cucumber."
+    },
+    {
+     "text": "Add the vodka, St-Germain, lemon juice and simple syrup, and fill with ice."
+    },
+    {
+     "text": "Shake vigorously and strain into a highball glass filled with fresh ice."
+    },
+    {
+     "text": "Garnish with mint, cucumber slices and lemon zest and top with lemonade or club soda."
+    }
+   ],
+   "base": [
+    {
+     "name": "Vodka"
+    }
+   ],
+   "type": "Modern Classics",
+   "type_url": "https://www.liquor.com/recipe-type/modern-classics/?post_type=recipe",
+   "difficulty": "Complicated",
+   "difficulty_url": "https://www.liquor.com/complexity/complicated/?post_type=recipe",
+   "strength": "Medium",
+   "strength_url": "https://www.liquor.com/strength/medium/?post_type=recipe"
+  },
+  {
+   "name": "Cosmopolitan",
+   "ingredients": [
+    {
+     "name": "Citrus vodka",
+     "units": "1 1⁄2 oz"
+    },
+    {
+     "name": "Cointreau",
+     "units": "1 oz"
+    },
+    {
+     "name": "Fresh lime juice",
+     "units": "1⁄2 oz"
+    },
+    {
+     "name": "Cranberry juice",
+     "units": "1 dash"
+    }
+   ],
+   "garnish": [
+    {
+     "name": "1 Lime wedge"
+    }
+   ],
+   "howto": [
+    {
+     "text": "Add all the ingredients to a shaker and fill with ice."
+    },
+    {
+     "text": "Shake, and strain into a chilled cocktail glass."
+    },
+    {
+     "text": "Garnish with a lime wedge."
+    }
+   ],
+   "base": [
+    {
+     "name": "Vodka"
+    }
+   ],
+   "type": "Classics",
+   "type_url": "https://www.liquor.com/recipe-type/classics/?post_type=recipe",
+   "difficulty": "Medium",
+   "difficulty_url": "https://www.liquor.com/complexity/medium/?post_type=recipe",
+   "strength": "Medium",
+   "strength_url": "https://www.liquor.com/strength/medium/?post_type=recipe"
+  },
+  {
+   "name": "Coastal Citrus & Basil",
+   "ingredients": [
+    {
+     "name": "Moon Mountain Coastal Citrus Flavored Vodka",
+     "units": "1 1⁄2 oz"
+    },
+    {
+     "name": "Lemonade",
+     "units": "1 1⁄2 oz"
+    },
+    {
+     "name": "Simple syrup",
+     "units": "1⁄4 oz"
+    },
+    {
+     "name": "Fresh basil leaves",
+     "units": "2"
+    }
+   ],
+   "garnish": [
+    {
+     "name": "1 Lemon peel and/or basil sprig"
+    }
+   ],
+   "howto": [
+    {
+     "text": "Add all the ingredients to a shaker and fill with ice."
+    },
+    {
+     "text": "Shake well and strain into a chilled cocktail glass."
+    },
+    {
+     "text": "Garnish with a lemon peel and/or basil sprig."
+    }
+   ],
+   "base": [
+    {
+     "name": "Vodka"
+    }
+   ],
+   "type": "Modern Classics",
+   "type_url": "https://www.liquor.com/recipe-type/modern-classics/?post_type=recipe",
+   "difficulty": "Medium",
+   "difficulty_url": "https://www.liquor.com/complexity/medium/?post_type=recipe",
+   "strength": "Medium",
+   "strength_url": "https://www.liquor.com/strength/medium/?post_type=recipe"
+  }
+ ]
+}
