@@ -57,4 +57,17 @@ public class RecipeBook {
     public List<Recipe> getRecipes() {
         return mRecipes;
     }
+
+    public Recipe getRecipe(String recipeName) {
+        Recipe r = null;
+
+        for (int i = 0; i < mRecipes.size(); i++) {
+            if (mRecipes.get(i).getName().equals(recipeName)) {
+                r = mRecipes.get(i);
+                break;
+            }
+        }
+
+        return r;
+    }
 }

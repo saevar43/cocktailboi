@@ -1,5 +1,6 @@
 package hi.hbv601g.cocktailboi;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -61,12 +62,12 @@ public class RecipeListFragment extends Fragment {
 
         @Override
         public void onClick(View view) {
-            Toast.makeText(getActivity(),
-                    mRecipe.getName() +" clicked!",Toast.LENGTH_SHORT)
-                    .show();
+            Intent intent = RecipePagerActivity.newIntent(getActivity(), mRecipe.getName());
+            startActivity(intent);
         }
 
     }
+
     private class RecipeAdapter extends RecyclerView.Adapter<RecipeHolder> {
         private List<Recipe> mRecipes;
         public RecipeAdapter(List<Recipe> Recipes) {
