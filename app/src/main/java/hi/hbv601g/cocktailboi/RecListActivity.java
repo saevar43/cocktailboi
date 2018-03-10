@@ -2,23 +2,18 @@ package hi.hbv601g.cocktailboi;
 
 import android.app.SearchManager;
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.view.View;
-import android.widget.EditText;
 import android.widget.SearchView;
 
-public class MainActivity_menu extends AppCompatActivity {
-
-    public static final String EXTRA_MESSAGE = "hi.hbv601g.cocktailboi.MESSAGE";
+public class RecListActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_menu);
+        setContentView(R.layout.activity_rec_list);
     }
 
     @Override
@@ -32,13 +27,5 @@ public class MainActivity_menu extends AppCompatActivity {
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
 
         return true;
-    }
-
-    public void showList(View view) {
-        Intent intent = new Intent(this, RecListActivity.class);
-
-        // Get a list of drinks
-
-        startActivity(intent);
     }
 }
