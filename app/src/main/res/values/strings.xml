@@ -4,4 +4,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_recipe_pager">RecipePagerActivity</string>
+    <string name="vodka_button">Vodka</string>
+    <string name="rum_button">Rum</string>
+    <string name="gin_button">Gin</string>
+    <string name="other_button">Other</string>
 </resources>
