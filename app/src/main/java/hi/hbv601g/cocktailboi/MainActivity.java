@@ -12,15 +12,15 @@ public class MainActivity extends SingleFragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FragmentManager fm = getSupportFragmentManager();
-
-        Fragment fragment = fm.findFragmentById(R.id.main_container);
-        if (fragment == null) {
-            fragment = new RecipeListFragment();
-            fm.beginTransaction()
-                    .add(R.id.main_container, fragment) // FrameLayout
-                    .commit();
-        }
+//        FragmentManager fm = getSupportFragmentManager();
+//
+//        Fragment fragment = fm.findFragmentById(R.id.main_container);
+//        if (fragment == null) {
+//            fragment = new RecipeListFragment();
+//            fm.beginTransaction()
+//                    .add(R.id.main_container, fragment) // FrameLayout
+//                    .commit();
+//        }
     }
     @Override
     protected Fragment createFragment() {

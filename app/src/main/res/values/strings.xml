@@ -8,4 +8,5 @@
     <string name="rum_button">Rum</string>
     <string name="gin_button">Gin</string>
     <string name="other_button">Other</string>
+    <string name="search_hint">Search</string>
 </resources>
