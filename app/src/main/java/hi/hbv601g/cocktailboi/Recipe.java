@@ -1,5 +1,7 @@
 package hi.hbv601g.cocktailboi;
 
+import java.util.ArrayList;
+
 /**
  * Created by saevar43 on 25/02/2018.
  */
@@ -7,27 +9,21 @@ package hi.hbv601g.cocktailboi;
 public class Recipe {
 
     private String name;
-    private String[] ingredients;
-    private String[] garnish;
+    private ArrayList<Ingredient> ingredients;
+    private ArrayList<String> garnish;
     private String howTo;
-    private String baseAlc;
-    private String type;
-    private String difficulty;
-    private String strength;
+    private ArrayList<String> spirits;
 
     public Recipe() {
     }
 
-    public Recipe(String name, String[] ingredients, String[] garnish, String howTo, String baseAlc,
-                  String type, String difficulty, String strength) {
+    public Recipe(String name, ArrayList<Ingredient> ingredients, ArrayList<String> garnish,
+                  String howTo, ArrayList<String> spirits) {
         this.name = name;
         this.ingredients = ingredients;
         this.garnish = garnish;
         this.howTo = howTo;
-        this.baseAlc = baseAlc;
-        this.type = type;
-        this.difficulty = difficulty;
-        this.strength = strength;
+        this.spirits = spirits;
     }
 
     public String getName() {
@@ -38,19 +34,19 @@ public class Recipe {
         this.name = name;
     }
 
-    public String[] getIngredients() {
+    public ArrayList<Ingredient> getIngredients() {
         return ingredients;
     }
 
-    public void setIngredients(String[] ingredients) {
+    public void setIngredients(ArrayList<Ingredient> ingredients) {
         this.ingredients = ingredients;
     }
 
-    public String[] getGarnish() {
+    public ArrayList<String> getGarnish() {
         return garnish;
     }
 
-    public void setGarnish(String[] garnish) {
+    public void setGarnish(ArrayList<String> garnish) {
         this.garnish = garnish;
     }
 
@@ -62,35 +58,15 @@ public class Recipe {
         this.howTo = howTo;
     }
 
-    public String getBaseAlc() {
-        return baseAlc;
+    public ArrayList<String> getSpirits() {
+        return spirits;
     }
 
-    public void setBaseAlc(String baseAlc) {
-        this.baseAlc = baseAlc;
+    public void setSpirits(ArrayList<String> spirits) {
+        this.spirits = spirits;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public String getDifficulty() {
-        return difficulty;
-    }
-
-    public void setDifficulty(String difficulty) {
-        this.difficulty = difficulty;
-    }
-
-    public String getStrength() {
-        return strength;
-    }
-
-    public void setStrength(String strength) {
-        this.strength = strength;
+    public String toString() {
+        return name;
     }
 }
