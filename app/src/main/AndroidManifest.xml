@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="hi.hbv601g.cocktailboi">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".MainActivity_menu">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,29 +23,17 @@
                 android:resource="@xml/searchable" />
         </activity>
 
-        <activity android:name=".MainActivity">
-        </activity>
-
         <activity
-            android:name=".RecipePagerActivity"
-            android:label="@string/title_activity_recipe_pager"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-
-        <activity
-            android:name=".RecListActivity"
-            android:parentActivityName=".MainActivity_menu">
+            android:name=".RecipeListActivity"
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable"
                 />
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity_menu" />
+                android:value=".MainActivity" />
 
-        </activity>
-
-        <activity android:name=".RecipeDetailsActivity">
         </activity>
 
         <activity android:name=".SearchActivity">
