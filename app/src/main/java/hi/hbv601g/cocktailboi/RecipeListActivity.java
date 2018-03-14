@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
@@ -46,6 +48,24 @@ public class RecipeListActivity extends AppCompatActivity {
         lv = (ListView) findViewById(R.id.list);
 
         new GetRecipes().execute();
+
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?>adapter,View v, int position){
+                Recipe item = (Recipe) adapter.getItemAtPosition(position);
+
+                Intent intent = new Intent(RecipeListActivity.this, RecipeDetailsActivity.class);
+
+                intent.putExtra("name", item.getName());
+                intent.putExtra("ingredients", item.getIngredients());
+                intent.putExtra("glass", item.getGlass());
+                intent.putExtra("howTo", item.getHowTo());
+                intent.putExtra("skill", item.getSkill());
+                intent.putExtra("spirits", item.getSpirits());
+
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
