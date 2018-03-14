@@ -91,68 +91,66 @@ public class RecipeListActivity extends AppCompatActivity {
             // Making a request to URL and getting response
             String jsonStr = sh.makeServiceCall(url);
 
-            Log.e(TAG, "Response from URL: " + jsonStr);
+            Log.e(TAG, "Response from URL: " + url);
 
             if (jsonStr != null) {
                 try {
                     JSONObject jsonObj = new JSONObject(jsonStr);
 
                     // Getting JSON Array node
-                    JSONArray recipes = jsonObj.getJSONArray("recipes");
+                    JSONArray recipes = jsonObj.getJSONArray("result");
 
-                    // Loop through contacts
+                    // Loop through recipes
                     for (int i = 0; i < recipes.length(); i++) {
                         JSONObject r = recipes.getJSONObject(i);
 
-                        // recipe name
+                        // Recipe name
                         String name = r.getString("name");
 
-                        // ingredients
+                        // Recipe description
+                        String howTo = r.getString("descriptionPlain");
+
+                        // Recipe rating
+                        String rating = r.getString("rating");
+
+                        // Recipe garnish, ingredients and spirits
                         JSONArray ingr = r.getJSONArray("ingredients");
-                        ArrayList<Ingredient> ingredients = new ArrayList<>();
+                        ArrayList<String> ingredients = new ArrayList<>();
+                        ArrayList<String> spirits = new ArrayList<>();
 
-                        for (int j = 0; j <  ingr.length(); j++) {
+                        for (int j = 0; j < ingr.length(); j++) {
                             JSONObject ing = ingr.getJSONObject(j);
-                            Ingredient ingToAdd = new Ingredient();
 
-                            ingToAdd.setName(ing.getString("name"));
-                            if (ing.has("units")) {
-                                ingToAdd.setUnits(ing.getString("units"));
+                            if (ing.getString("type").equals("vodka")) {
+                                spirits.add("Vodka");
                             }
-                            ingredients.add(ingToAdd);
-                        }
-
-                        // garnish
-                        ArrayList<String> garnish = new ArrayList<String>();
-                        if (r.has("garnish")) {
-                            JSONArray garn = r.getJSONArray("garnish");
-
-                            for (int j = 0; j < garn.length(); j++) {
-                                JSONObject gar = garn.getJSONObject(j);
-
-                                garnish.add(gar.getString("name"));
+                            if (ing.getString("type").equals("rum")) {
+                                spirits.add("Rum");
                             }
+                            if (ing.getString("type").equals("whisky")) {
+                                spirits.add("Whisky");
+                            }
+                            if (ing.getString("type").equals("brandy")) {
+                                spirits.add("Brandy");
+                            }
+                            if (ing.getString("type").equals("tequila")) {
+                                spirits.add("Tequila");
+                            }
+                            if (ing.getString("type").equals("gin")) {
+                                spirits.add("Gin");
+                            }
+
+                            ingredients.add(new String(ing.getString("textPlain")));
                         }
 
-                        // howTo
-                        JSONArray how = r.getJSONArray("howto");
-                        String howTo = "";
+                        // Recipe difficulty
+                        JSONObject sk = r.getJSONObject("skill");
+                        String skill = sk.getString("name");
 
-                        for (int j = 0; j < how.length(); j++) {
-                            JSONObject h = how.getJSONObject(j);
+                        // Glass drink is served in
+                        JSONObject si = r.getJSONObject("servedIn");
+                        String glass = si.getString("text");
 
-                            howTo += h.getString("text") + "\n";
-                        }
-
-                        // spirits
-                        JSONArray spir = r.getJSONArray("spirits");
-                        ArrayList<String> spirits = new ArrayList<String>();
-
-                        for (int j = 0; j < spir.length(); j++) {
-                            JSONObject spi = spir.getJSONObject(j);
-
-                            spirits.add(spi.getString("name"));
-                        }
 
                         // Create the recipe to add.
                         Recipe recipe = new Recipe();
@@ -160,10 +158,9 @@ public class RecipeListActivity extends AppCompatActivity {
                         // Add information to the recipe.
                         recipe.setName(name);
                         recipe.setIngredients(ingredients);
-                        if (!garnish.isEmpty()) {
-                            recipe.setGarnish(garnish);
-                        }
+                        recipe.setGlass(glass);
                         recipe.setHowTo(howTo);
+                        recipe.setSkill(skill);
                         recipe.setSpirits(spirits);
 
                         // Add recipe to recipe list

@@ -3,26 +3,28 @@ package hi.hbv601g.cocktailboi;
 import java.util.ArrayList;
 
 /**
- * Created by saevar43 on 25/02/2018.
+ * Created by saevar43 on 14/03/2018.
  */
 
 public class Recipe {
 
     private String name;
-    private ArrayList<Ingredient> ingredients;
-    private ArrayList<String> garnish;
+    private ArrayList<String> ingredients;
+    private String glass;
     private String howTo;
+    private String skill;
     private ArrayList<String> spirits;
 
     public Recipe() {
     }
 
-    public Recipe(String name, ArrayList<Ingredient> ingredients, ArrayList<String> garnish,
-                  String howTo, ArrayList<String> spirits) {
+    public Recipe(String name, ArrayList<String> ingredients, String glass, String howTo,
+                  String skill, ArrayList<String> spirits) {
         this.name = name;
         this.ingredients = ingredients;
-        this.garnish = garnish;
+        this.glass = glass;
         this.howTo = howTo;
+        this.skill = skill;
         this.spirits = spirits;
     }
 
@@ -34,20 +36,20 @@ public class Recipe {
         this.name = name;
     }
 
-    public ArrayList<Ingredient> getIngredients() {
+    public ArrayList<String> getIngredients() {
         return ingredients;
     }
 
-    public void setIngredients(ArrayList<Ingredient> ingredients) {
+    public void setIngredients(ArrayList<String> ingredients) {
         this.ingredients = ingredients;
     }
 
-    public ArrayList<String> getGarnish() {
-        return garnish;
+    public String getGlass() {
+        return glass;
     }
 
-    public void setGarnish(ArrayList<String> garnish) {
-        this.garnish = garnish;
+    public void setGlass(String glass) {
+        this.glass = glass;
     }
 
     public String getHowTo() {
@@ -56,6 +58,14 @@ public class Recipe {
 
     public void setHowTo(String howTo) {
         this.howTo = howTo;
+    }
+
+    public String getSkill() {
+        return skill;
+    }
+
+    public void setSkill(String skill) {
+        this.skill = skill;
     }
 
     public ArrayList<String> getSpirits() {

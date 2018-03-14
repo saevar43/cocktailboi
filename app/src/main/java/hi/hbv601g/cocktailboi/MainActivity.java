@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     public void showList(View view) {
         Intent intent = new Intent(this, RecipeListActivity.class);
 
-        intent.putExtra("url", "https://api.myjson.com/bins/9tps5");
+        intent.putExtra("url", "https://addb.absolutdrinks.com/drinks/?apiKey=8e5143045cc94b4e8801cf09e0c135af&pageSize=50");
 
         startActivity(intent);
     }
