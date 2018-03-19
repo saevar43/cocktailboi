@@ -51,11 +51,11 @@ public class RecipeListActivity extends AppCompatActivity {
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
-            public void onItemClick(AdapterView<?>adapter,View v, int position){
+            public void onItemClick(AdapterView<?>adapter,View v, int position, long derp){
                 Recipe item = (Recipe) adapter.getItemAtPosition(position);
-
                 Intent intent = new Intent(RecipeListActivity.this, RecipeDetailsActivity.class);
 
+                intent.putExtra("url", "https://addb.absolutdrinks.com/drinks/?apiKey=8e5143045cc94b4e8801cf09e0c135af&pageSize=50");
                 intent.putExtra("name", item.getName());
                 intent.putExtra("ingredients", item.getIngredients());
                 intent.putExtra("glass", item.getGlass());
