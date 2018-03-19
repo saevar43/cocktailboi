@@ -63,6 +63,7 @@ public class RecipeListActivity extends AppCompatActivity {
                 intent.putExtra("skill", item.getSkill());
                 intent.putExtra("spirits", item.getSpirits());
 
+
                 startActivity(intent);
             }
         });
