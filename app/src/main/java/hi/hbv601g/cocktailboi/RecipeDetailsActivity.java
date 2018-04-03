@@ -47,8 +47,8 @@ public class RecipeDetailsActivity extends AppCompatActivity {
     private void getRecipeDetails() {
         String name = getIntent().getExtras().getString("name");
         recipeDetails.addAll(getIntent().getExtras().getStringArrayList("ingredients"));
-//        recipeDetails.add(getIntent().getExtras().getString("glass"));
-        recipeDetails.add(getIntent().getExtras().getString("howTo"));
+//      recipeDetails.add(getIntent().getExtras().getString("glass"));
+        String howTo = getIntent().getExtras().getString("howTo");
         recipeDetails.add(getIntent().getExtras().getString("skill"));
         recipeDetails.addAll(getIntent().getExtras().getStringArrayList("spirits"));
 
@@ -57,7 +57,17 @@ public class RecipeDetailsActivity extends AppCompatActivity {
 
         TextView recipeDetailsView = (TextView) findViewById(R.id.recipeDetails);
         recipeDetailsView.setText(TextUtils.join("\n", recipeDetails));
-        /*ImageView recipeImageView = (ImageView) findViewById(R.id.cocktail_image);
+
+        TextView recipeDetailsHowToView = (TextView) findViewById(R.id.recipeHowToDetails);
+        recipeDetailsHowToView.setText(howTo);
+
+
+    }
+
+    private void getCocktailImage() {
+
+
+        /*ImageView recipeImageView = (ImageView) findViewById(R.id.cocktailImages);
         recipeImageView.setImageIcon(image);*/
     }
 }
