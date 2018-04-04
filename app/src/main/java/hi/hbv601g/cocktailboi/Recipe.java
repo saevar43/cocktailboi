@@ -9,6 +9,7 @@ import java.util.ArrayList;
 public class Recipe {
 
     private String name;
+    private String id;
     private ArrayList<String> ingredients;
     private String glass;
     private String howTo;
@@ -18,9 +19,10 @@ public class Recipe {
     public Recipe() {
     }
 
-    public Recipe(String name, ArrayList<String> ingredients, String glass, String howTo,
+    public Recipe(String name, String id, ArrayList<String> ingredients, String glass, String howTo,
                   String skill, ArrayList<String> spirits) {
         this.name = name;
+        this.id = id;
         this.ingredients = ingredients;
         this.glass = glass;
         this.howTo = howTo;
@@ -34,6 +36,14 @@ public class Recipe {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public ArrayList<String> getIngredients() {

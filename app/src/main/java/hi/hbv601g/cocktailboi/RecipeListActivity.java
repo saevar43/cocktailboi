@@ -42,7 +42,6 @@ public class RecipeListActivity extends AppCompatActivity {
         // Get intent
         Intent intent = getIntent();
         url = intent.getExtras().getString("url");
-
         recipeList = new ArrayList<>();
 
         lv = (ListView) findViewById(R.id.list);
@@ -56,6 +55,8 @@ public class RecipeListActivity extends AppCompatActivity {
                 Intent intent = new Intent(RecipeListActivity.this, RecipeDetailsActivity.class);
 
                 intent.putExtra("url", "https://addb.absolutdrinks.com/drinks/?apiKey=8e5143045cc94b4e8801cf09e0c135af&pageSize=50");
+                intent.putExtra("imageUrl", "https://assets.absolutdrinks.com/drinks/%s.png");
+                intent.putExtra("cocktailId", item.getId());
                 intent.putExtra("name", item.getName());
                 intent.putExtra("ingredients", item.getIngredients());
                 intent.putExtra("glass", item.getGlass());
@@ -131,6 +132,9 @@ public class RecipeListActivity extends AppCompatActivity {
                         // Recipe name
                         String name = r.getString("name");
 
+                        // Recipe name
+                        String id = r.getString("id");
+
                         // Recipe description
                         String howTo = r.getString("descriptionPlain");
 
@@ -181,6 +185,7 @@ public class RecipeListActivity extends AppCompatActivity {
 
                         // Add information to the recipe.
                         recipe.setName(name);
+                        recipe.setId(id);
                         recipe.setIngredients(ingredients);
                         recipe.setGlass(glass);
                         recipe.setHowTo(howTo);

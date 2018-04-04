@@ -3,16 +3,31 @@ package hi.hbv601g.cocktailboi;
 import android.app.ProgressDialog;
 import android.app.SearchManager;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 
 public class RecipeDetailsActivity extends AppCompatActivity {
@@ -29,6 +44,7 @@ public class RecipeDetailsActivity extends AppCompatActivity {
         recipeDetails = new ArrayList<>();
 
         getRecipeDetails();
+        new GetCocktailImage().execute();
     }
 
     @Override
@@ -64,10 +80,53 @@ public class RecipeDetailsActivity extends AppCompatActivity {
 
     }
 
-    private void getCocktailImage() {
+    private class GetCocktailImage extends AsyncTask<Void, Void, Void> {
 
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            // Show progress dialog
+            pDialog = new ProgressDialog(RecipeDetailsActivity.this);
+            pDialog.setMessage("Please wait...");
+            pDialog.setCancelable(false);
+            pDialog.show();
+        }
 
-        /*ImageView recipeImageView = (ImageView) findViewById(R.id.cocktailImages);
-        recipeImageView.setImageIcon(image);*/
+        @Override
+        protected Void doInBackground(Void... arg0) {
+            // Making a request to URL and getting response
+            String url = String.format(getIntent().getExtras().getString("imageUrl"), getIntent().getExtras().getString("cocktailId"));
+
+            try {
+                ImageView view = (ImageView)findViewById(R.id.cocktailImages);
+                Bitmap bitmap = BitmapFactory.decodeStream((InputStream)new URL(url).getContent());
+                setImage(view, bitmap);
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+            super.onPostExecute(result);
+            // Dismiss the progress dialog
+            if (pDialog.isShowing())
+                pDialog.dismiss();
+        }
+
+        private void setImage(final ImageView view, final Bitmap bitmap){
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    view.setImageBitmap(bitmap);
+                }
+            });
+        }
     }
+
+    
 }

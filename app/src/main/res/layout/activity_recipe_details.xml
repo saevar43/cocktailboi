@@ -1,70 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="hi.hbv601g.cocktailboi.RecipeDetailsActivity">
 
-    <TextView
-        android:id="@+id/cocktailName"
-        android:layout_width="106dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="36dp"
-        android:gravity="center"
-        android:text="Name of cocktail"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/recipeDetails"
-        android:layout_width="wrap_content"
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="16dp"
-        android:background="#ccc"
-        android:drawablePadding="8dp"
-        android:drawableTop="@drawable/vodka"
-        android:gravity="center"
-        android:text="Ingredients"
-        android:textAlignment="textStart"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cocktailName"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="RtlCompat" />
+        android:visibility="visible"
+        android:background="#ffffff"
+        tools:context="hi.hbv601g.cocktailboi.RecipeDetailsActivity">
 
-    <TextView
-        android:id="@+id/recipeHowToDetails"
-        android:layout_width="235dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
-        android:background="#ccc"
-        android:drawablePadding="8dp"
-        android:text="How To"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recipeDetails"
-        app:layout_constraintVertical_bias="0.175" />
+        <TextView
+            android:id="@+id/cocktailName"
+            android:layout_width="193dp"
+            android:layout_height="41dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/abril_fatface"
+            android:gravity="center"
+            android:text="Name of cocktail"
+            android:textColor="#585858"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/cocktailImages"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_launcher_background"
-        tools:layout_editor_absoluteX="27dp"
-        tools:layout_editor_absoluteY="153dp" />
+        <TextView
+            android:id="@+id/recipeDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/abril_fatface"
+            android:gravity="center"
+            android:text="Ingredients"
+            android:textAlignment="textStart"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="#585858"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cocktailImages"
+            tools:ignore="RtlCompat" />
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+
+            android:id="@+id/recipeHowToDetails"
+            android:layout_width="229dp"
+            android:layout_height="117dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="56dp"
+            android:background="@drawable/border"
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/abril_fatface"
+            android:lineSpacingExtra="8sp"
+            android:text="How to"
+            android:textColor="#585858"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recipeDetails"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/cocktailImages"
+            android:layout_width="254dp"
+            android:layout_height="223dp"
+            android:layout_marginTop="68dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:id="@+id/howToMix"
+            android:layout_width="wrap_content"
+            android:layout_height="23dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/abril_fatface"
+            android:text="How To mix:"
+            android:textColor="#585858"
+            app:layout_constraintBottom_toTopOf="@+id/recipeHowToDetails"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recipeDetails"
+            app:layout_constraintVertical_bias="1.0"
+            tools:text="How To Mix:" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>
