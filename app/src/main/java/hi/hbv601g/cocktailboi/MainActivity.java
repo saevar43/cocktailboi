@@ -9,6 +9,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.SearchView;
+import android.util.Log;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,7 +38,9 @@ public class MainActivity extends AppCompatActivity {
     public void showList(View view) {
         Intent intent = new Intent(this, RecipeListActivity.class);
 
-        intent.putExtra("url", "https://addb.absolutdrinks.com/drinks/?apiKey=8e5143045cc94b4e8801cf09e0c135af&pageSize=50");
+        Button b = (Button)view;
+        String type = b.getText().toString();
+        intent.putExtra("url", "https://addb.absolutdrinks.com/drinks/withtype/"+type+"/?apiKey=8e5143045cc94b4e8801cf09e0c135af&pageSize=50");
 
         startActivity(intent);
     }
