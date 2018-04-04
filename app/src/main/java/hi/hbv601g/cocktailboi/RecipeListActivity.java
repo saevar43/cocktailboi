@@ -12,7 +12,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Toast;
@@ -25,38 +25,48 @@ import java.util.ArrayList;
 
 public class RecipeListActivity extends AppCompatActivity {
 
+    // Instance variables
     private String TAG = RecipeListActivity.class.getSimpleName();
 
     private ProgressDialog pDialog;
-    private ListView lv;
+
+    private ListView recipeListView;
 
     private String url;
 
     ArrayList<Recipe> recipeList;
 
+    SharedPreference sharedPreference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_list);
+        sharedPreference = new SharedPreference();
 
         // Get intent
         Intent intent = getIntent();
         url = intent.getExtras().getString("url");
+
+
+        // INIT recipe list.
         recipeList = new ArrayList<>();
 
-        lv = (ListView) findViewById(R.id.list);
+        // Instantiate the list view for the recipe list.
+        recipeListView = (ListView) findViewById(R.id.list);
 
         new GetRecipes().execute();
 
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+        // Set item click listener that displays recipe details.
+        recipeListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?>adapter,View v, int position, long derp){
                 Recipe item = (Recipe) adapter.getItemAtPosition(position);
                 Intent intent = new Intent(RecipeListActivity.this, RecipeDetailsActivity.class);
 
-                intent.putExtra("url", "https://addb.absolutdrinks.com/drinks/?apiKey=8e5143045cc94b4e8801cf09e0c135af&pageSize=50");
                 intent.putExtra("imageUrl", "https://assets.absolutdrinks.com/drinks/%s.png");
                 intent.putExtra("cocktailId", item.getId());
+                //intent.putExtra("url", url);
                 intent.putExtra("name", item.getName());
                 intent.putExtra("ingredients", item.getIngredients());
                 intent.putExtra("glass", item.getGlass());
@@ -67,11 +77,32 @@ public class RecipeListActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        // Set item long click listener that adds the recipe to favorites.
+        recipeListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                ImageView button = (ImageView) view.findViewById(R.id.fav_img);
+
+                String tag = button.getTag().toString();
+
+                if (tag.equalsIgnoreCase("off")) {
+                    sharedPreference.addFavorite(RecipeListActivity.this, recipeList.get(i));
+                    Toast.makeText(RecipeListActivity.this,
+                            "Added recipe to Favorites", Toast.LENGTH_SHORT).show();
+                    button.setTag("on");
+                    button.setImageResource(android.R.drawable.btn_star_big_on);
+                } else {
+                    sharedPreference.removeFavorite(RecipeListActivity.this, recipeList.get(i));
+                    Toast.makeText(RecipeListActivity.this,
+                            "Removed recipe from Favorites", Toast.LENGTH_SHORT).show();
+                    button.setTag("off");
+                    button.setImageResource(android.R.drawable.btn_star_big_off);
+                }
+                return true;
+            }
+        });
     }
-
-
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -229,15 +260,12 @@ public class RecipeListActivity extends AppCompatActivity {
             // Dismiss the progress dialog
             if (pDialog.isShowing())
                 pDialog.dismiss();
+
             /**
              * Updating parsed JSON data into ListView
              */
-
-            ArrayAdapter<Recipe> adapter = new ArrayAdapter<>(RecipeListActivity.this,
-                    R.layout.recipe_list_item, R.id.name, recipeList);
-
-            lv.setAdapter(adapter);
-
+            RecipeListAdapter adapter = new RecipeListAdapter(RecipeListActivity.this, recipeList);
+            recipeListView.setAdapter(adapter);
         }
     }
 }

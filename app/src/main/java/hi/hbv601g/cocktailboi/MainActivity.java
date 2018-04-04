@@ -12,6 +12,8 @@ import android.widget.SearchView;
 import android.util.Log;
 import android.widget.Button;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     public static final String EXTRA_MESSAGE = "hi.hbv601g.cocktailboi.MESSAGE";
@@ -40,7 +42,19 @@ public class MainActivity extends AppCompatActivity {
 
         Button b = (Button)view;
         String type = b.getText().toString();
-        intent.putExtra("url", "https://addb.absolutdrinks.com/drinks/withtype/"+type+"/?apiKey=8e5143045cc94b4e8801cf09e0c135af&pageSize=50");
+        intent.putExtra("url", "https://addb.absolutdrinks.com/drinks/withtype/" + type + "/?apiKey=8e5143045cc94b4e8801cf09e0c135af&pageSize=4000");
+
+        startActivity(intent);
+    }
+
+
+    public void showFavorites(View view) {
+        SharedPreference sharedPreference = new SharedPreference();
+        Intent intent = new Intent(this, FavoriteListActivity.class);
+
+        String jsonFavorites = sharedPreference.getFavoritesAsJson(this);
+
+        intent.putExtra("favorites", jsonFavorites);
 
         startActivity(intent);
     }
