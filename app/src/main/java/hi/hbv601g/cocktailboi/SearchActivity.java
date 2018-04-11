@@ -4,8 +4,9 @@ import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
-public class SearchActivity extends Activity {
+public class SearchActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +24,12 @@ public class SearchActivity extends Activity {
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
             String query = intent.getStringExtra(SearchManager.QUERY);
 
-            // Use query to search data
+            Intent resultsIntent = new Intent(this, RecipeListActivity.class);
+            resultsIntent.putExtra("url", "https://addb.absolutdrinks.com/quickSearch/ingredients/" + query + "/?apiKey=8e5143045cc94b4e8801cf09e0c135af&pageSize=4000");
+
+            startActivity(resultsIntent);
+
         }
+
     }
 }
