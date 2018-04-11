@@ -47,6 +47,10 @@
         <activity android:name=".RecipeDetailsActivity" />
         <activity android:name=".FavoriteListActivity" />
 
+        <meta-data
+            android:name="android.app.default_searchable"
+            android:value=".SearchActivity" />
+
     </application>
 
 </manifest>
