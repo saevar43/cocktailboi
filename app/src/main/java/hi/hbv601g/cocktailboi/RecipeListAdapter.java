@@ -2,6 +2,7 @@ package hi.hbv601g.cocktailboi;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.text.Layout;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -36,6 +37,7 @@ public class RecipeListAdapter extends ArrayAdapter<Recipe> {
         TextView recipeNameTxt;
         ImageView favImg;
     }
+
 
     @Override
     public int getCount() {

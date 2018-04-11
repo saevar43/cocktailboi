@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item>
-        <shape>
-            <gradient
-                android:angle="90"
-                android:startColor="#c2e59c"
-                android:endColor="#64b3f4"
-                android:type="linear"/>
-        </shape>
-    </item>
+    <item android:state_pressed="true"
+        android:drawable="@color/button_cyan"/> <!-- pressed -->
+    <item android:state_focused="true"
+        android:drawable="@color/button_cyan"/> <!-- focused -->
+    <item android:drawable="@color/button_cyan"/> <!-- default -->
 </selector>

@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
+    android:background="#303030"
     android:descendantFocusability="blocksDescendants">
 
     <TextView
@@ -14,9 +15,11 @@
         android:layout_height="wrap_content"
         android:paddingBottom="2dip"
         android:paddingTop="6dip"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="#fff"
         android:textSize="16sp"
         android:textStyle="bold"
+        android:fontFamily="@font/abril_fatface"
+        android:background="@android:drawable/list_selector_background"
         android:layout_alignParentLeft="true"/>
 
     <ImageView
