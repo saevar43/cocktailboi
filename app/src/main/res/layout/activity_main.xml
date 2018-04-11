@@ -54,7 +54,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:onClick="showList"
-        android:text="@string/other_button"
+        android:text="@string/brandy_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.694"
         app:layout_constraintStart_toEndOf="@+id/gin_button"
@@ -65,7 +65,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="showFavorites"
-        android:text="Favorites"
+        android:text="@string/fav_button"
         app:layout_constraintBaseline_toBaselineOf="parent"
         tools:layout_editor_absoluteY="403dp" />
 

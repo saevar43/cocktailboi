@@ -65,8 +65,6 @@ public class RecipeDetailsActivity extends AppCompatActivity {
         recipeDetails.addAll(getIntent().getExtras().getStringArrayList("ingredients"));
 //      recipeDetails.add(getIntent().getExtras().getString("glass"));
         String howTo = getIntent().getExtras().getString("howTo");
-        recipeDetails.add(getIntent().getExtras().getString("skill"));
-        recipeDetails.addAll(getIntent().getExtras().getStringArrayList("spirits"));
 
         TextView cocktailNameView = (TextView) findViewById(R.id.cocktailName);
         cocktailNameView.setText(name);

@@ -1,12 +1,17 @@
 <resources>
     <string name="app_name">CocktailBoi</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_recipe_pager">RecipePagerActivity</string>
+    <!-- MAIN ACTIVITY -->
     <string name="vodka_button">Vodka</string>
     <string name="rum_button">Rum</string>
     <string name="gin_button">Gin</string>
-    <string name="other_button">Other</string>
+    <string name="brandy_button">Brandy</string>
+    <string name="fav_button">Favorites</string>
+
+    <!-- RECIPE LIST ACTIVITY -->
+    <string name="add_fav_toast_txt">Added recipe to Favorites</string>
+    <string name="rem_fav_toast_txt">Removed recipe from Favorites</string>
+
+    <!-- SEARCH ACTIVITY -->
     <string name="search_hint">Search</string>
 </resources>
