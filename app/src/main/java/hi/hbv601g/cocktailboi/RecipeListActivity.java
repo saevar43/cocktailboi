@@ -23,6 +23,12 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+/**
+ * Recipe list activity class. Creates recipe list view
+ * and contains methods used on recipe list.
+ *
+ * Created by saevar43.
+ */
 public class RecipeListActivity extends AppCompatActivity {
 
     // Instance variables
@@ -55,6 +61,7 @@ public class RecipeListActivity extends AppCompatActivity {
         // Instantiate the list view for the recipe list.
         recipeListView = (ListView) findViewById(R.id.list);
 
+        // Get data and display it.
         new GetRecipes().execute();
 
         // Set item click listener that displays recipe details.
@@ -66,13 +73,10 @@ public class RecipeListActivity extends AppCompatActivity {
 
                 intent.putExtra("imageUrl", "https://assets.absolutdrinks.com/drinks/%s.png");
                 intent.putExtra("cocktailId", item.getId());
-                //intent.putExtra("url", url);
                 intent.putExtra("name", item.getName());
                 intent.putExtra("ingredients", item.getIngredients());
                 intent.putExtra("glass", item.getGlass());
                 intent.putExtra("howTo", item.getHowTo());
-                intent.putExtra("skill", item.getSkill());
-                intent.putExtra("spirits", item.getSpirits());
 
                 startActivity(intent);
             }
@@ -89,13 +93,13 @@ public class RecipeListActivity extends AppCompatActivity {
                 if (tag.equalsIgnoreCase("off")) {
                     sharedPreference.addFavorite(RecipeListActivity.this, recipeList.get(i));
                     Toast.makeText(RecipeListActivity.this,
-                            "Added recipe to Favorites", Toast.LENGTH_SHORT).show();
+                            R.string.add_fav_toast_txt, Toast.LENGTH_SHORT).show();
                     button.setTag("on");
                     button.setImageResource(android.R.drawable.btn_star_big_on);
                 } else {
                     sharedPreference.removeFavorite(RecipeListActivity.this, recipeList.get(i));
                     Toast.makeText(RecipeListActivity.this,
-                            "Removed recipe from Favorites", Toast.LENGTH_SHORT).show();
+                            R.string.rem_fav_toast_txt, Toast.LENGTH_SHORT).show();
                     button.setTag("off");
                     button.setImageResource(android.R.drawable.btn_star_big_off);
                 }
@@ -117,13 +121,7 @@ public class RecipeListActivity extends AppCompatActivity {
         return true;
     }
 
-    /**
-     * Setter for URL to parse.
-     * @param url
-     */
-    public void setUrl(String url) {
-        url = url;
-    }
+    /* ------------------------------------------------------------------------------------------ */
 
     /**
      * Async task class to get JSON by making HTTP call
@@ -142,10 +140,10 @@ public class RecipeListActivity extends AppCompatActivity {
 
         @Override
         protected Void doInBackground(Void... arg0) {
-            HttpHandler sh = new HttpHandler();
+            HttpHandler serviceHandler = new HttpHandler();
 
             // Making a request to URL and getting response
-            String jsonStr = sh.makeServiceCall(url);
+            String jsonStr = serviceHandler.makeServiceCall(url);
 
             Log.e(TAG, "Response from URL: " + url);
 
@@ -169,47 +167,20 @@ public class RecipeListActivity extends AppCompatActivity {
                         // Recipe description
                         String howTo = r.getString("descriptionPlain");
 
-                        // Recipe rating
-                        String rating = r.getString("rating");
-
-                        // Recipe garnish, ingredients and spirits
+                        // Recipe ingredients
                         JSONArray ingr = r.getJSONArray("ingredients");
                         ArrayList<String> ingredients = new ArrayList<>();
-                        ArrayList<String> spirits = new ArrayList<>();
 
+                        // Loop through ingredients and add them to ArrayList.
                         for (int j = 0; j < ingr.length(); j++) {
                             JSONObject ing = ingr.getJSONObject(j);
-
-                            if (ing.getString("type").equals("vodka")) {
-                                spirits.add("Vodka");
-                            }
-                            if (ing.getString("type").equals("rum")) {
-                                spirits.add("Rum");
-                            }
-                            if (ing.getString("type").equals("whisky")) {
-                                spirits.add("Whisky");
-                            }
-                            if (ing.getString("type").equals("brandy")) {
-                                spirits.add("Brandy");
-                            }
-                            if (ing.getString("type").equals("tequila")) {
-                                spirits.add("Tequila");
-                            }
-                            if (ing.getString("type").equals("gin")) {
-                                spirits.add("Gin");
-                            }
 
                             ingredients.add(new String(ing.getString("textPlain")));
                         }
 
-                        // Recipe difficulty
-                        JSONObject sk = r.getJSONObject("skill");
-                        String skill = sk.getString("name");
-
                         // Glass drink is served in
                         JSONObject si = r.getJSONObject("servedIn");
                         String glass = si.getString("text");
-
 
                         // Create the recipe to add.
                         Recipe recipe = new Recipe();
@@ -220,8 +191,6 @@ public class RecipeListActivity extends AppCompatActivity {
                         recipe.setIngredients(ingredients);
                         recipe.setGlass(glass);
                         recipe.setHowTo(howTo);
-                        recipe.setSkill(skill);
-                        recipe.setSpirits(spirits);
 
                         // Add recipe to recipe list
                         recipeList.add(recipe);

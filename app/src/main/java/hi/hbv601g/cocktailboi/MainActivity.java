@@ -14,9 +14,13 @@ import android.widget.Button;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+/**
+ * Main activity class. Creates front page view and contains methods used on the front page.
+ *
+ * Created by saevar43.
+ */
 
-    public static final String EXTRA_MESSAGE = "hi.hbv601g.cocktailboi.MESSAGE";
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,17 +41,27 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    /**
+     * Method that creates an intent to be passed on to RecipeListActivity.
+     * Used to get cocktail recipes with a specific alcohol type.
+     * @param view
+     */
     public void showList(View view) {
         Intent intent = new Intent(this, RecipeListActivity.class);
 
         Button b = (Button)view;
         String type = b.getText().toString();
-        intent.putExtra("url", "https://addb.absolutdrinks.com/drinks/withtype/" + type + "/?apiKey=8e5143045cc94b4e8801cf09e0c135af&pageSize=4000");
+        intent.putExtra("url", "https://addb.absolutdrinks.com/drinks/withtype/" + type + "/?apiKey=8e5143045cc94b4e8801cf09e0c135af&pageSize=1100");
 
         startActivity(intent);
     }
 
 
+    /**
+     * Method that creates an intent to be passed on to FavoriteListActivity.
+     * Used to get cocktail recipes that have been added to favorites.
+     * @param view
+     */
     public void showFavorites(View view) {
         SharedPreference sharedPreference = new SharedPreference();
         Intent intent = new Intent(this, FavoriteListActivity.class);

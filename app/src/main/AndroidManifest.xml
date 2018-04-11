@@ -11,6 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <!-- MAIN ACTIVITY -->
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,6 +24,8 @@
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
         </activity>
+
+        <!-- SEARCH ACTIVITY -->
         <activity android:name=".SearchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
@@ -30,6 +34,8 @@
             android:name="android.app.searchable"
             android:resource="@xml/searchable" />
         </activity>
+
+        <!-- RECIPE LIST ACTIVITY -->
         <activity
             android:name=".RecipeListActivity"
             android:parentActivityName=".MainActivity">
@@ -44,8 +50,19 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-        <activity android:name=".RecipeDetailsActivity" />
-        <activity android:name=".FavoriteListActivity" />
+
+        <!-- RECIPE DETAILS ACTIVITY -->
+        <activity android:name=".RecipeDetailsActivity"/>
+
+        <!-- FAVORITE LIST ACTIVITY -->
+        <activity
+            android:name=".FavoriteListActivity"
+            android:parentActivityName=".MainActivity">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
 
     </application>
 
