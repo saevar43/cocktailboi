@@ -10,10 +10,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.SearchView;
-import android.util.Log;
 import android.widget.Button;
-
-import java.util.ArrayList;
 
 /**
  * Main activity class. Creates front page view and contains methods used on the front page.
@@ -52,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, RecipeListActivity.class);
 
         Button b = (Button)view;
-        String type = b.getText().toString();
+        String type = b.getTag().toString();
         intent.putExtra("url", "https://addb.absolutdrinks.com/drinks/withtype/" + type + "/?apiKey=8e5143045cc94b4e8801cf09e0c135af&pageSize=1100");
 
         startActivity(intent);

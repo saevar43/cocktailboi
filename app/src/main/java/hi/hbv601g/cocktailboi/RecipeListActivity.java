@@ -1,8 +1,10 @@
 package hi.hbv601g.cocktailboi;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
@@ -42,13 +44,12 @@ public class RecipeListActivity extends AppCompatActivity {
 
     ArrayList<Recipe> recipeList;
 
-    SharedPreference sharedPreference;
+    SharedPreference sharedPreference = new SharedPreference();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_list);
-        sharedPreference = new SharedPreference();
 
         // Get intent
         Intent intent = getIntent();
@@ -121,6 +122,25 @@ public class RecipeListActivity extends AppCompatActivity {
         return true;
     }
 
+    /**
+     * Method that creates an information dialog.
+     * @param context - The current context of the app.
+     */
+    private void displayInfoDialog(Context context) {
+        AlertDialog infoDialog = new AlertDialog.Builder(context).create();
+
+        infoDialog.setTitle(R.string.info_dialog_title);
+        infoDialog.setMessage(context.getResources().getString(R.string.info_dialog_message));
+        infoDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Got it!",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+        infoDialog.show();
+    }
+
     /* ------------------------------------------------------------------------------------------ */
 
     /**
@@ -133,7 +153,8 @@ public class RecipeListActivity extends AppCompatActivity {
             super.onPreExecute();
             // Show progress dialog
             pDialog = new ProgressDialog(RecipeListActivity.this);
-            pDialog.setMessage("Please wait...");
+            pDialog.setTitle(R.string.info_dialog_title);
+            pDialog.setMessage(RecipeListActivity.this.getResources().getString(R.string.info_dialog_message));
             pDialog.setCancelable(false);
             pDialog.show();
         }

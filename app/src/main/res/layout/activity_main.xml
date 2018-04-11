@@ -8,6 +8,7 @@
 
     <Button
         android:id="@+id/vodka_button"
+        android:tag="@string/vodka_btn_tag"
         android:layout_width="132dp"
         android:layout_height="117dp"
         android:layout_marginStart="16dp"
@@ -21,6 +22,7 @@
 
     <Button
         android:id="@+id/rum_button"
+        android:tag="@string/rum_btn_tag"
         android:layout_width="132dp"
         android:layout_height="117dp"
         android:layout_marginEnd="16dp"
@@ -36,6 +38,7 @@
 
     <Button
         android:id="@+id/gin_button"
+        android:tag="@string/gin_btn_tag"
         android:layout_width="132dp"
         android:layout_height="117dp"
         android:layout_marginStart="16dp"
@@ -48,13 +51,14 @@
 
     <Button
         android:id="@+id/other_button"
+        android:tag="@string/other_btn_tag"
         android:layout_width="132dp"
         android:layout_height="117dp"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:onClick="showList"
-        android:text="@string/brandy_button"
+        android:text="@string/other_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.694"
         app:layout_constraintStart_toEndOf="@+id/gin_button"
