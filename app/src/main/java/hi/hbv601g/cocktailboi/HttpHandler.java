@@ -13,6 +13,8 @@ import java.net.ProtocolException;
 import java.net.URL;
 
 /**
+ * HTTP handler class. Makes service calls to API and returns data stream as a JSON string.
+ *
  * Created by saevar43 on 11/03/2018.
  */
 
@@ -20,10 +22,18 @@ public class HttpHandler {
 
     private static final String TAG = HttpHandler.class.getSimpleName();
 
+    /**
+     * Simple constructor.
+     */
     public HttpHandler() {
 
     }
 
+    /**
+     * Method to make a service call to a webservice at a specified URL.
+     * @param reqUrl - The URL of the API/webservice.
+     * @return response from API/webservice.
+     */
     public String makeServiceCall(String reqUrl) {
         String response = null;
 
@@ -47,6 +57,11 @@ public class HttpHandler {
         return response;
     }
 
+    /**
+     * Method to convert an input stream to a string.
+     * @param is - The input stream to be converted.
+     * @return string created from the input stream.
+     */
     private String convertStreamToString(InputStream is) {
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
         StringBuilder sb = new StringBuilder();

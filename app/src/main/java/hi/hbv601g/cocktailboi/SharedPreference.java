@@ -5,13 +5,13 @@ import android.content.SharedPreferences;
 
 import com.google.gson.Gson;
 
-import org.json.JSONArray;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 /**
+ * Shared preferences class. Contains all methods used to add/remove recipes from favorites.
+ *
  * Created by saevar43 on 02/04/2018.
  */
 
@@ -24,7 +24,11 @@ public class SharedPreference {
         super();
     }
 
-    // Save a list of favorite recipes as JSON onto device.
+    /**
+     * A method that saves a list of favorite recipes as JSON onto a device.
+     * @param context - The current context of the app.
+     * @param favorites - The list to be saved to favorites.
+     */
     public void saveFavorites(Context context, List<Recipe> favorites) {
         SharedPreferences settings;
         SharedPreferences.Editor editor;
@@ -41,7 +45,11 @@ public class SharedPreference {
         editor.apply();
     }
 
-    // Add a recipe to favorites.
+    /**
+     * A method that adds a recipe to favorites.
+     * @param context - The current context of the app.
+     * @param recipe - The recipe to be added to favorites.
+     */
     public void addFavorite(Context context, Recipe recipe) {
         ArrayList<Recipe> favorites = getFavorites(context);
 
@@ -53,17 +61,29 @@ public class SharedPreference {
         saveFavorites(context, favorites);
     }
 
-    // Remove a recipe from favorites.
-    public void removeFavorite(Context context, Recipe recipe) {
+    /**
+     * A method to remove a recipe from favorites.
+     * @param context - The current context of the app.
+     * @param recipeToRemove - The recipe to be removed.
+     */
+    public void removeFavorite(Context context, Recipe recipeToRemove) {
         ArrayList<Recipe> favorites = getFavorites(context);
 
         if (favorites != null) {
-            favorites.remove(recipe);
+            for (int i = 0; i < favorites.size(); i++) {
+                if (favorites.get(i).getName().equalsIgnoreCase(recipeToRemove.getName())) {
+                    favorites.remove(favorites.get(i));
+                }
+            }
             saveFavorites(context, favorites);
         }
     }
 
-    // Get a list of favorite recipes.
+    /**
+     * A method that returns the recipes currently saved to favorites.
+     * @param context - The current context of the app.
+     * @return a list of recipes currently saved to favorites.
+     */
     public ArrayList<Recipe> getFavorites(Context context) {
         SharedPreferences settings;
         List<Recipe> favorites;
@@ -85,6 +105,11 @@ public class SharedPreference {
         return (ArrayList<Recipe>) favorites;
     }
 
+    /**
+     * A method that returns recipes currently saved to favorites as a JSON string.
+     * @param context - The current context of the app.
+     * @return a JSON string of recipes currently saved to favorites.
+     */
     public String getFavoritesAsJson(Context context) {
         SharedPreferences settings;
 

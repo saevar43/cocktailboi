@@ -2,14 +2,10 @@ package hi.hbv601g.cocktailboi;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Color;
-import android.text.Layout;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,6 +13,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Recipe list adapter class. A custom adapter class that
+ * contains methods that affect recipes in a list view.
+ *
  * Created by saevar43 on 03/04/2018.
  */
 
@@ -87,15 +86,17 @@ public class RecipeListAdapter extends ArrayAdapter<Recipe> {
 
     /**
      * Checks whether a recipe exists in Favorites.
+     * @param checkRecipe - The recipe to check if exists.
+     * @return boolean value that is true if the recipe is in favorites.
      */
-    public boolean checkFavoriteItem(Recipe checkRecipe) {
+    private boolean checkFavoriteItem(Recipe checkRecipe) {
         boolean check = false;
 
         ArrayList<Recipe> favorites = sharedPreference.getFavorites(context);
 
         if (favorites != null) {
             for (Recipe recipe: favorites) {
-                if (recipe.equals(checkRecipe)) {
+                if (recipe.getName().equalsIgnoreCase(checkRecipe.getName())) {
                     check = true;
                     break;
                 }
