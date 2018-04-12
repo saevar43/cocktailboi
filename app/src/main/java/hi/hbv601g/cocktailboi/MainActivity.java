@@ -6,11 +6,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.SearchView;
 import android.widget.Button;
+import android.widget.Toast;
 
 /**
  * Main activity class. Creates front page view and contains methods used on the front page.
@@ -63,12 +65,22 @@ public class MainActivity extends AppCompatActivity {
      */
     public void showFavorites(View view) {
         SharedPreference sharedPreference = new SharedPreference();
-        Intent intent = new Intent(this, FavoriteListActivity.class);
 
-        String jsonFavorites = sharedPreference.getFavoritesAsJson(this);
+        Log.e("favs", sharedPreference.getFavoritesAsJson(this));
 
-        intent.putExtra("favorites", jsonFavorites);
+        if (sharedPreference.getFavoritesAsJson(this).isEmpty()
+                || sharedPreference.getFavoritesAsJson(this).equalsIgnoreCase("[]")
+                || sharedPreference.getFavoritesAsJson(this).equalsIgnoreCase("")) {
+            Toast.makeText(this,
+                    R.string.no_fav_toast_txt, Toast.LENGTH_SHORT).show();
+        } else {
+            Intent intent = new Intent(this, FavoriteListActivity.class);
 
-        startActivity(intent);
+            String jsonFavorites = sharedPreference.getFavoritesAsJson(this);
+
+            intent.putExtra("favorites", jsonFavorites);
+
+            startActivity(intent);
+        }
     }
 }

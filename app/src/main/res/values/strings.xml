@@ -14,6 +14,7 @@
     <string name="rum_btn_tag">rum</string>
     <string name="gin_btn_tag">gin</string>
     <string name="other_btn_tag">brandy/or/whisky/or/tequila</string>
+    <string name="no_fav_toast_txt">There are no favorites to display</string>
 
     <!-- RECIPE LIST ACTIVITY -->
     <string name="add_fav_toast_txt">Added recipe to Favorites</string>
