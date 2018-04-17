@@ -30,7 +30,16 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 
+/**
+ * Recipe model class. Contains constructors, getters and setters
+ * for Recipe model and its attributes.
+ *
+ * Created by karigeir on 19/03/2018.
+ */
+
 public class RecipeDetailsActivity extends AppCompatActivity {
+
+    //instance variables
     private ProgressDialog pDialog;
     private ListView lv;
 
@@ -41,8 +50,10 @@ public class RecipeDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_details);
 
+        // INIT recipe list
         recipeDetails = new ArrayList<>();
 
+        // Get images and display them
         getRecipeDetails();
         new GetCocktailImage().execute();
     }
@@ -61,9 +72,9 @@ public class RecipeDetailsActivity extends AppCompatActivity {
     }
 
     private void getRecipeDetails() {
+        // Getting the details to show from the API
         String name = getIntent().getExtras().getString("name");
         recipeDetails.addAll(getIntent().getExtras().getStringArrayList("ingredients"));
-//      recipeDetails.add(getIntent().getExtras().getString("glass"));
         String howTo = getIntent().getExtras().getString("howTo");
 
         TextView cocktailNameView = (TextView) findViewById(R.id.cocktailName);
