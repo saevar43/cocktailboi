@@ -22,10 +22,25 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Button button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        button = (Button) findViewById(R.id.filter_button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openCheckboxFilter();
+            }
+        });
+    }
+
+    public void openCheckboxFilter() {
+        Intent intent = new Intent(this, CheckboxFilter.class);
+        startActivity(intent);
     }
 
     @Override

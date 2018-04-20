@@ -10,6 +10,7 @@
     <string name="tequila_button">Tequila</string>
     <string name="other_button">Other</string>
     <string name="fav_button">Favorites</string>
+    <string name="filter_button">Filter by ingredients</string>
     <string name="vodka_btn_tag">vodka</string>
     <string name="rum_btn_tag">rum</string>
     <string name="gin_btn_tag">gin</string>
@@ -27,4 +28,19 @@
 
     <!-- SEARCH ACTIVITY -->
     <string name="search_hint">Search</string>
+
+    <!-- FILTER ACTIVITY -->
+    <string name="checkbox_title">Select ingredients</string>
+    <string name="checkbox_vodka">Vodka</string>
+    <string name="checkbox_lime">Lime</string>
+    <string name="checkbox_gin">Gin</string>
+    <string name="checkbox_lemonjuice">Lemon Juice</string>
+    <string name="checkbox_eggwhite">Egg-white</string>
+    <string name="checkbox_orangejuice">Orange Juice</string>
+    <string name="checkbox_search">Search</string>
+
+
+
+
+
 </resources>
